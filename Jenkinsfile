@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DOCKERHUB_REPO = "madhupdevops/python-api-azoha"
+    DOCKERHUB_REPO = "madhupdevops/python-api-azodha"
     IMAGE_TAG = "${BUILD_NUMBER}"
     AWS_REGION   = "us-east-1"
     EKS_CLUSTER  = "api"
