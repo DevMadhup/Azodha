@@ -93,5 +93,13 @@ kubectl get svc
 Deployment Confirmation:
 <img width="1880" height="598" alt="image" src="https://github.com/user-attachments/assets/5b371abe-bc33-4e8a-9b2a-803ab07141f0" />
 
+**Application Output:**
+
+<img width="1427" height="352" alt="image" src="https://github.com/user-attachments/assets/c6c55dfd-a0bc-4941-9026-e84db42124f4" />
+
+<img width="1173" height="247" alt="image" src="https://github.com/user-attachments/assets/b087d57f-8297-481f-8548-0dcc4950dcf4" />
+
+
+
 #
 
