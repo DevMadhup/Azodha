@@ -22,7 +22,8 @@ This project demonstrates a production-style CI/CD pipeline for deploying a cont
 | eksctl | <a href="">Eksctl for EKS Cluster creation</a>     |
 | Docker | <a href="">Containerization of Application</a> |
 | HTTPS  | <a href="">Python certbot for HTTPS</a> |
-| Monitoring | <a href="">Grafana for Monitoring</a>
+| Cloudwatch | <a href="">EKS CLuster Monitoring on Cloudwatch</a>
+| Grafana and Prometheus | <a href="">Grafana for Monitoring</a>
 | Clean Up | <a href="">Clean up</a>     |
 
 #
@@ -67,8 +68,8 @@ Prerequisites
 <img width="1433" height="702" alt="image" src="https://github.com/user-attachments/assets/2f5d4110-ee4e-4744-9a3d-2e226dfd19a3" />
 
 **Steps**
-
-- Build Docker image using Jenkins.
+(JENKINS)
+- Build Docker image.
 - Push image to registry with versioned tag.
 - Update kubeconfig:
 
@@ -90,7 +91,7 @@ kubectl get svc
 ```
 
 #
-Deployment Confirmation:
+**Deployment Confirmation:**
 <img width="1880" height="598" alt="image" src="https://github.com/user-attachments/assets/5b371abe-bc33-4e8a-9b2a-803ab07141f0" />
 
 **Application Output:**
@@ -102,4 +103,38 @@ Deployment Confirmation:
 
 
 #
+
+**📊 Monitoring & Alert Design**
+
+- Monitoring Architecture
+
+  - The application and infrastructure are monitored using a Prometheus + Grafana based observability stack deployed via kube-prometheus-stack.
+
+  
+| Components    | Purpose |
+| -------- | ------- |
+| Prometheus  | Metrics collection and storage     |
+| Grafana  | Grafana	Visualization and alerting     |
+| cAdvisor | Pod/container CPU & memory metrics     |
+| node-exporter | Node-level CPU & memory metrics |
+| Grafana Alerting  | Alert evaluation and notifications |
+
+- CloudWatch metrics for EKS Cluster monitoring
+
+<img width="1532" height="637" alt="image" src="https://github.com/user-attachments/assets/f278e97d-74d4-4707-be1d-92388cc79247" />
+
+- Grafana Dashboards
+  - CPU and Memory for Instance
+<img width="1410" height="702" alt="image" src="https://github.com/user-attachments/assets/dcf86449-0ee3-4f0b-b551-3833e1e7299e" />
+
+  - Alerts configured on Grafana for CPU usage and Memory usage
+    - High Resource Usage
+      - CPU > 70% for 5 minutes
+      - Memory > 75% for 5 minutes
+     
+<img width="1401" height="692" alt="image" src="https://github.com/user-attachments/assets/ae9529f6-a766-4fd4-9073-debddeb8b964" />
+
+<img width="1396" height="705" alt="image" src="https://github.com/user-attachments/assets/e67aee64-0b07-428a-95f7-9c61e1cdebba" />
+
+<img width="1488" height="766" alt="image" src="https://github.com/user-attachments/assets/29089000-9251-457f-896b-a295971fb628" />
 
