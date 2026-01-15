@@ -21,7 +21,6 @@ This project demonstrates a production-style CI/CD pipeline for deploying a cont
 | Jenkins  | <a href="">Jenkins for CI/CD</a>     |
 | eksctl | <a href="">Eksctl for EKS Cluster creation</a>     |
 | Docker | <a href="">Containerization of Application</a> |
-| HTTPS  | <a href="">Python certbot for HTTPS</a> |
 | Cloudwatch | <a href="">EKS CLuster Monitoring on Cloudwatch</a>
 | Grafana and Prometheus | <a href="">Grafana for Monitoring</a>
 | Clean Up | <a href="">Clean up</a>     |
